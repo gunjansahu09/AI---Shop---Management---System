@@ -1,9 +1,10 @@
 function login() {
   let user = document.getElementById("username").value;
   let pass = document.getElementById("password").value;
+
   if(user && pass) {
     document.getElementById("loginMsg").innerText = "✅ Logged in successfully!";
-    // After login, show dashboard sections
+    // Hide login section and show dashboard (default: Add Sale)
     showSection('sale');
   } else {
     document.getElementById("loginMsg").innerText = "❌ Please enter username and password.";
@@ -16,7 +17,9 @@ function logout() {
 }
 
 function showSection(id) {
+  // Hide all sections
   document.querySelectorAll(".section").forEach(sec => sec.classList.add("hidden"));
+  // Show the requested section
   document.getElementById(id).classList.remove("hidden");
 }
 
