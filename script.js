@@ -38,3 +38,58 @@ function addItem() {
     table.innerHTML += `<tr><td>${item}</td><td>${stock}</td><td>${cost}</td></tr>`;
   }
 }
+
+// Add Sale
+function addSale() {
+  let date = document.getElementById("saleDate").value;
+  let item = document.getElementById("saleItem").value;
+  let qty = parseInt(document.getElementById("saleQty").value) || 1;
+  let price = parseFloat(document.getElementById("salePrice").value);
+  let cost = parseFloat(document.getElementById("saleCost").value);
+  let custName = document.getElementById("custName").value;
+  let custPhone = document.getElementById("custPhone").value;
+
+  if(date && item && price > 0 && cost >= 0) {
+    let profit = (price - cost) * qty;
+
+    // Update Reports table
+    let reportTable = document.getElementById("reportTable");
+    reportTable.innerHTML += `<tr>
+      <td>${date}</td>
+      <td>${item}</td>
+      <td>${qty}</td>
+      <td>${price}</td>
+      <td>${cost}</td>
+      <td>${profit}</td>
+    </tr>`;
+
+    // Update Customers table
+    let custTable = document.getElementById("custTable");
+    custTable.innerHTML += `<tr>
+      <td>${custName}</td>
+      <td>${custPhone}</td>
+      <td>${item}</td>
+      <td>${price}</td>
+    </tr>`;
+
+    // Update summary totals
+    updateReportSummary();
+  } else {
+    alert("⚠️ Please fill all sale details correctly.");
+  }
+}
+
+function updateReportSummary() {
+  let rows = document.querySelectorAll("#reportTable tr");
+  let totalSales = 0, totalProfit = 0;
+
+  rows.forEach((row, idx) => {
+    if(idx === 0) return; // skip header
+    let cells = row.querySelectorAll("td");
+    totalSales += parseFloat(cells[3].innerText) || 0;
+    totalProfit += parseFloat(cells[5].innerText) || 0;
+  });
+
+  document.getElementById("reportSummary").innerText =
+    `Total Sales: ₹${totalSales.toFixed(2)} | Total Profit: ₹${totalProfit.toFixed(2)}`;
+}
