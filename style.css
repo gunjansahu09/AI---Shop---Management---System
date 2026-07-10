@@ -1,19 +1,17 @@
-/* General page styling */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #3b2a1a, #d46a1f); /* dark brown → orange */
+  background: linear-gradient(to right, #3b2a1a, #d46a1f);
   color: #fff;
 }
 
-/* Sidebar styling */
 .sidebar {
   position: fixed;
   left: 0;
   top: 0;
   width: 220px;
   height: 100%;
-  background: #2a1a0f; /* dark brown */
+  background: #2a1a0f;
   padding: 20px;
 }
 
@@ -41,7 +39,7 @@ body {
 
 .sidebar h3 {
   margin-top: 20px;
-  color: #FFD700; /* gold */
+  color: #FFD700;
 }
 
 .sidebar ul {
@@ -60,22 +58,15 @@ body {
   background: #444;
 }
 
-/* Main content styling */
 .main {
   margin-left: 240px;
   padding: 20px;
 }
 
-h1 {
+h1, h2 {
   color: #FFD700;
 }
 
-h2 {
-  color: #FFD700;
-  margin-top: 20px;
-}
-
-/* Section styling */
 .section {
   margin-top: 20px;
 }
@@ -84,7 +75,6 @@ h2 {
   display: none;
 }
 
-/* Input fields */
 input {
   display: block;
   margin: 6px 0;
@@ -94,7 +84,6 @@ input {
   border-radius: 4px;
 }
 
-/* Buttons */
 button {
   background: #000;
   color: #fff;
@@ -108,7 +97,6 @@ button:hover {
   background: #444;
 }
 
-/* Tables */
 table {
   margin-top: 10px;
   border-collapse: collapse;
