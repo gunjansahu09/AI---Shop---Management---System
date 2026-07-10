@@ -35,6 +35,19 @@
       <p id="loginMsg"></p>
     </div>
 
+    <!-- Add Sale Section -->
+    <div id="sale" class="section hidden">
+      <h2>Log New Sale</h2>
+      <input type="date" id="saleDate">
+      <input type="text" id="saleItem" placeholder="Item Name">
+      <input type="number" id="saleQty" placeholder="Quantity" value="1">
+      <input type="number" id="salePrice" placeholder="Selling Price (₹)">
+      <input type="number" id="saleCost" placeholder="Cost Price (₹)">
+      <input type="text" id="custName" placeholder="Customer Name">
+      <input type="text" id="custPhone" placeholder="Customer Phone">
+      <button onclick="addSale()">Add Sale</button>
+    </div>
+
     <!-- Expenses Section -->
     <div id="expenses" class="section hidden">
       <h2>Expense Tracker</h2>
